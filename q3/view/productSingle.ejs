@@ -1,0 +1,24 @@
+<%- include('header.ejs')%>
+    <div class="container border">
+        <h4 class="title mt-2 mb-2 p-3">
+            Product Detail
+            <a href="/" class="btn btn-success float-right ml-2">Home</a>
+            <a href="/cartList" class="btn btn-success float-right">Cart</a>
+        </h4>
+        <div class="">
+            <div>
+                <h4>Name :</h4>
+                <%= product.name %>
+            </div>
+            <div>
+                <h4>Price :</h4>
+                <%= product.price %>
+            </div>
+            <form action="/addToCart" method="POST">
+                <input type="hidden" name="name" value="<%= product.name %>">
+                <input type="hidden" name="price" value="<%= product.price %>">
+                <input class="btn btn-warning mt-2 mb-2" type="submit" name="cart" value="Add to Cart">
+            </form>
+        </div>
+    </div>
+    <%- include('footer.ejs')%>

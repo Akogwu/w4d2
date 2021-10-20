@@ -1,0 +1,28 @@
+/* initial setup css for page layout************************************************** */
+body{
+    margin: 0; padding: 0; font-size: 16px;
+    font-family:Roboto,Helvetica Neue,Helvetica,Arial,sans-serif; line-height: 26px;
+}
+ul, p, h1, h2, h3, h4, h5, h6{
+    margin: 0; padding: 0;
+}
+/* initial setup css for layout *********************************************************** */
+
+.header, .footer{
+    background-color: #174a04; color: wheat;
+}
+
+.title{
+    background-color: #aed88d;
+}
+
+.card{
+    box-shadow: 10px 10px 10px lightblue;
+}
+.card-body{
+    padding: 1%;
+}
+
+.message{
+    float: right; color: red; font-size: 18px; margin-right: 2%; margin-top: 0.5%;
+}

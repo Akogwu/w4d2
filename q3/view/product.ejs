@@ -1,0 +1,36 @@
+<%- include('header.ejs')%>
+    <div class="container border">
+        <h4 class="title mt-2 mb-2 p-3">
+            Product List
+            <a href="/cartList" class="btn btn-success float-right">
+                Cart( <span id="productCount">
+                    <%= productCount %>
+                </span> )
+            </a>
+            <span class="message"></span>
+        </h4>
+        <div class="row">
+            <% for(let product of productList){ %>
+                <div class="col-3 card border m-2 p-2">
+                    <div class="card-header text-center">
+                        <%=product.name%>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            <%=product.description%>
+                        </p>
+                        <div>
+                            <a class="float-left btn btn-success mt-2" href="/productDetail/<%=product.id%>">Detail</a>
+                            <form class="add-to-cart">
+                                <input type="hidden" name="name" value="<%=product.name%>">
+                                <input type="hidden" name="price" value="<%=product.price%>">
+                                <input class="btn btn-secondary float-right mt-2" type="submit" name="cart"
+                                    value="Add to Cart">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+    <%- include('footer.ejs')%>
